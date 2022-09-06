@@ -65,7 +65,7 @@ function buildCharts(sample) {
 
     //  5. Create a variable that holds the first sample in the array.
     var result = results[0];
-    var PANEL = d3.select("#bar");
+    var PANEL2 = d3.select("#bar");
 
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
     var otu_ids=result.otu_ids
@@ -109,7 +109,7 @@ function buildCharts(sample) {
     var resultArray = metadata.filter(sampleObj => sampleObj.id == sample);
     var result = resultArray[0];
     // Use d3 to select the panel with id of `#sample-metadata`
-    var PANEL = d3.select("#bubble");
+    var PANEL3 = d3.select("#bubble");
         
     // Deliverable 1 Step 10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot(); 
@@ -153,7 +153,7 @@ function buildCharts(sample) {
 
     // 2. Create a variable that holds the first sample in the metadata array.
     var result = resultArray[0];
-    var PANEL = d3.select("#gauge");
+    var PANEL4 = d3.select("#gauge");
 
     // Create variables that hold the otu_ids, otu_labels, and sample_values.
     var otu_ids=result.otu_ids
