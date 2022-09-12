@@ -1,9 +1,12 @@
 body {
-
-    color: #009999;
+    font: small-caps 15px Verdana;
+    grid-gap: 10px;
+    background-color: #d2f6f7
+  
   }
   .jumbotron {
-    text-shadow: 2px 2px 4px #bdbdbd;
+    color: #094444;
+    text-shadow: 1px 1px 1px #bdbdbd;
     background-image: url("../images/header_image.jpg");
     background-size: 100%  100%;
     text-align: center;

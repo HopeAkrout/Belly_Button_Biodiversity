@@ -16,14 +16,13 @@
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
         <h1>Belly Button Biodiversity Dashboard</h1>
-        <p>Use the interactive charts below to explore the dataset</p>
-        <!-- <a href = "https://hopeakrout.github.io/Belly_Button_Biodiversity/" target = "_self">Click here to explore the interactive charts</a> -->
+        <p>Use the interactive charts below to explore and identify the top 10 bacterial belly button species for the test subject.</p>
       </div>
     </div>
     <div class="row">
       <div class="col-md-2">
         <div class="well">
-          <h5>Test Subject ID No.:</h5>
+          <h5>Choose a test Subject ID No. to see the subject's individualized data:</h5>
           <!-- <select id="selDataset"></select> -->
           <select id="selDataset" onchange="optionChanged(this.value)"></select>
         </div>
@@ -48,10 +47,9 @@
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="charts.js"></script>
-  <script src="plots.js"></script>
 
 </body>
 
