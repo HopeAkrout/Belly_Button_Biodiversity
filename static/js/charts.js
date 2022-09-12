@@ -77,18 +77,16 @@ function buildCharts(sample) {
     //  so the otu_ids with the most bacteria are last. 
 
     var yticks = otu_ids.slice(0, 10).map(otuID => `OTU ${otuID}`).reverse();
+    var xticks = sample_values.slice(0, 10).reverse();
 
     // 8. Create the trace for the bar chart. 
-    var trace1 = {
+    var barData = {
       x: xticks,
       y: yticks,
-      hovertext: otu_labels,
-      hoverinfo: "text",
+      text: otu_labels,
       orientation: 'h',
       type: 'bar'
     };
-
-    var barData = [trace1] 
 
     // 9. Create the layout for the bar chart. 
     var barLayout = {
@@ -101,7 +99,27 @@ function buildCharts(sample) {
         };
     // 10. Use Plotly to plot the data with the layout. 
     Plotly.newPlot('bar', barData, barLayout);
+  });
+}
 
+// 1. Create the buildCharts function.
+function buildCharts(sample) {
+  // 2. Use d3.json to load and retrieve the samples.json file 
+    d3.json("samples.json").then((data) => {
+      // 3. Create a variable that holds the samples array. 
+      var samples = data.samples;
+  
+      // 4. Create a variable that filters the samples for the object with the desired sample number.
+      var resultArray = samples.filter(sampleObject => sampleObject.id == sample);
+  
+      //  5. Create a variable that holds the first sample in the array.
+      var result = resultArray[0];
+  
+  
+      // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
+      var otu_ids=result.otu_ids
+      var otu_labels=result.otu_labels
+      var sample_values=result.sample_values
 
     // 1. Create the trace for the bubble chart.
     var bubbleData = {
@@ -126,8 +144,27 @@ function buildCharts(sample) {
 
     // 3. Use Plotly to plot the data with the layout.
     Plotly.newPlot("bubble", bubbleData, bubbleLayout); 
+  });
+}
 
-
+// 1. Create the buildCharts function.
+function buildCharts(sample) {
+  // 2. Use d3.json to load and retrieve the samples.json file 
+    d3.json("samples.json").then((data) => {
+      // 3. Create a variable that holds the samples array. 
+      var samples = data.samples;
+  
+      // 4. Create a variable that filters the samples for the object with the desired sample number.
+      var resultArray = samples.filter(sampleObject => sampleObject.id == sample);
+  
+      //  5. Create a variable that holds the first sample in the array.
+      var result = resultArray[0];
+  
+  
+      // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
+      var otu_ids=result.otu_ids
+      var otu_labels=result.otu_labels
+      var sample_values=result.sample_values
 
     // 3. Create a variable that holds the washing frequency.
     var metadata = data.metadata;
