@@ -1,10 +1,10 @@
 body {
 
-    color: #94b8b8;
+    color: #009999;
   }
   .jumbotron {
-    background-image: url("https://scx1.b-cdn.net/csz/news/800a/2012/1-navelgazingr.jpg");
-    background-size: 100% 100%;
+    background-image: url("../images/header_image.jpg");
+    background-size: 100%  100%;
     text-align: center;
   }
   
